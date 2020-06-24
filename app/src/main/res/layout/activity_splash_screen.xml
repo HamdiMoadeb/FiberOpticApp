@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:src="@drawable/logo"
+        android:layout_height="220dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="Fiber Optic"
+        android:textAlignment="center"
+        android:textColor="@color/colorMain"
+        android:textSize="35sp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

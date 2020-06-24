@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NetworkApplication</string>
+    <string name="about">• A user friendly tool to keep track of your cable network\n• Get a bird’eye view of your current network realm\n• Get a overall status of network from the dashboard\n• Analyse the path and signal strength of individual fibers</string>
+    <string name="weare">We are two senior collage students that major in « Networks and Telecommunications » . We developped this app as part of our senior project (PFE) . This has been supervised by S.O.T.E.T.E.L where our intership took place</string>
+    <string name="emails">Email us regarding feature requests :\n\n► Onsatig45@gmail.com\n\n► Ikram251923@gmail.com</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -47,17 +47,17 @@
         android:textSize="16sp"
         android:layout_marginTop="10dp"
         android:layout_height="wrap_content"/>
-    
+
     <Button
-        android:layout_width="match_parent"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textSize="22sp"
         android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/colorMain"
+        android:text="Login"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        android:layout_height="55dp"/>
+        android:textSize="22sp" />
 
     <TextView
         android:layout_width="match_parent"

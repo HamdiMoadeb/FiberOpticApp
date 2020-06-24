@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.outsider.networkapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgotPasswordActivity"
-            android:theme="@style/AuthAppTheme"/>
-        <activity android:name=".RegisterActivity"
-            android:theme="@style/AuthAppTheme"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/title_activity_maps"/>
+        <activity
+            android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:theme="@style/AuthAppTheme" />
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AuthAppTheme" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AuthAppTheme" />

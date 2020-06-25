@@ -3,6 +3,7 @@ package com.outsider.networkapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
@@ -22,10 +23,14 @@ import java.util.List;
 
 public class ChartsActivity extends AppCompatActivity {
 
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charts);
+
+        listView = findViewById(R.id.listData);
 
         getSupportActionBar().setTitle("Chart");
 
@@ -33,11 +38,8 @@ public class ChartsActivity extends AppCompatActivity {
         anyChartView.setProgressBar(findViewById(R.id.progrss));
 
         Cartesian cartesian = AnyChart.line();
-
         cartesian.animation(true);
-
         cartesian.padding(10d, 20d, 5d, 20d);
-
         cartesian.crosshair().enabled(true);
         cartesian.crosshair()
                 .yLabel(true)
@@ -45,9 +47,7 @@ public class ChartsActivity extends AppCompatActivity {
                 .yStroke((Stroke) null, null, null, (String) null, (String) null);
 
         cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
-
         cartesian.title("OTDR Trace");
-
         cartesian.yAxis(0).title("dB");
         cartesian.xAxis(0).labels().padding(5d, 5d, 5d, 5d);
 
@@ -58,7 +58,6 @@ public class ChartsActivity extends AppCompatActivity {
         seriesData.add(new CustomDataEntry("30", 0, 0, -10));
         seriesData.add(new CustomDataEntry("40", 0, 0, -12));
         seriesData.add(new CustomDataEntry("50", 0, 0, -14));
-
 
         Set set = Set.instantiate();
         set.data(seriesData);

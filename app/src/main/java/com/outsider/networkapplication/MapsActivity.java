@@ -60,6 +60,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(ll5).title("Marker 5").icon(BitmapDescriptorFactory
                 .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ll3, 11));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ll3, 13));
     }
 }

@@ -30,9 +30,21 @@ public class ChartsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charts);
 
+        getSupportActionBar().setTitle("Chart");
+
         listView = findViewById(R.id.listData);
 
-        getSupportActionBar().setTitle("Chart");
+        ArrayList<Routes> routes = new ArrayList<>();
+        routes.add(new Routes("1", "- 521.5", "452.36"));
+        routes.add(new Routes("2", "- 320.5", "54412.36"));
+        routes.add(new Routes("3", "- 201.5", "214.36"));
+        routes.add(new Routes("4", "- 874.5", "4110.36"));
+        routes.add(new Routes("5", "- 521.5", "54412.36"));
+        routes.add(new Routes("6", "- 11.5", "1230.36"));
+        routes.add(new Routes("7", "- 230.5", "1002.36"));
+
+        AdapterListData adapterListData = new AdapterListData(this, R.layout.item_data, routes);
+        listView.setAdapter(adapterListData);
 
         AnyChartView anyChartView = findViewById(R.id.any_chart_view);
         anyChartView.setProgressBar(findViewById(R.id.progrss));

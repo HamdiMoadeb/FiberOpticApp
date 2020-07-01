@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     Spinner spinAdvice, spinRoutes;
-    String[] devices = { "000000", "111111", "222222", "333333", "444444"};
-    String[] routes = { "Route 1", "Route 2", "Route 3", "Route 4", "Route 5"};
+    String[] devices = { "MTS 6000A NO.0", "MTS 6000B NO.1"};
+    String[] routes1 = { "Beja-Bousalem1", "Bousalem2-Beja", "Beja-Garde-Nationale ", "Ouad Zarga-Bousalem2", "Ouad Zarga-Beja"};
+    String[] routes2 = { "Tunis-Garde Nationale", "Garde Nationale-Sousse"};
     Button btnmap;
 
     @Override
@@ -34,18 +35,23 @@ public class MainActivity extends AppCompatActivity {
         btnmap = findViewById(R.id.mapBtn);
 
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,devices);
-        ArrayAdapter bb = new ArrayAdapter(this,android.R.layout.simple_spinner_item,routes);
+        final ArrayAdapter r1 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,routes1);
+        final ArrayAdapter r2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item,routes2);
 
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        bb.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        r1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        r2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinAdvice.setAdapter(aa);
-        spinRoutes.setAdapter(bb);
 
         spinAdvice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(getApplicationContext(),devices[position] , Toast.LENGTH_LONG).show();
+                if(position == 0){
+                    spinRoutes.setAdapter(r1);
+                }else{
+                    spinRoutes.setAdapter(r2);
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

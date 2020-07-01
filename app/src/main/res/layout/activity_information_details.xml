@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".InformationDetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:text="File"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:textColor="#673AB7"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="File :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fiber oued zarga vers bouselem2"
+                android:textColor="#8A8787"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Date :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="08/10/2019 12:33:10"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Device :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="MTS 6000A V No. 0"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Module :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="2142 No. 8136 B"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Configuration"
+            android:layout_marginTop="20dp"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:textColor="#673AB7"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Operator :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="SOTETEL"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="LOCATION A "
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Cable :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="oued zarga vers bouselem2"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Fiber :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Fiber 96"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Color :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Violet"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="LOCATION B "
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Cable :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="oued zarga vers bouselem2"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Fiber :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Fiber 96"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Color :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Violet"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Direction :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@string/a_b"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Location A : "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Oued Zarga"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Location B :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Boussalem 2"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Wavelength (nm) :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="1550"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Index :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="1.468000"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Pulse (µs) :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="1"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Range (km) :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="81,422"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Acq. time :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="10s"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Resolution :  "
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="2.50 m"
+            android:textSize="18sp"
+            android:textColor="#8A8787"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Backscatter coeff. :  "
+                android:textSize="18sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="-81,00 dB"
+                android:textSize="18sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Event detection threshold "
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Splices :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="All"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Reflectances :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="All"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Splitter :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="None"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Fiber end :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Auto"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Alarm threshold "
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Connectors :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="0,750 dB"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Splices :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="0,300 dB"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="\t\t"
+                android:textSize="16sp"
+                android:textColor="@color/colorMain"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Slopes :  "
+                android:textSize="16sp"
+                android:textColor="#9C27B0"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="1,000 dB/km"
+                android:textSize="16sp"
+                android:textColor="#8A8787"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

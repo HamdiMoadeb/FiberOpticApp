@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/white"
-    tools:context=".ChartsActivity">
+    android:padding="15dp"
+    tools:context=".TableDetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:gravity="center"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="File :  "
+            android:text="Distance (m) :  "
             android:textSize="18sp"
             android:textColor="@color/colorMain"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Fiber oued zarga vers bouselem2"
+            android:text="11482?17"
             android:textSize="18sp"
             android:textColor="#8A8787"
             android:layout_height="wrap_content"/>
@@ -31,18 +31,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Date :  "
+            android:text="Loss (dB) :  "
             android:textSize="18sp"
             android:textColor="@color/colorMain"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="08/10/2019 12:33:10"
+            android:text="-0,549"
             android:textSize="18sp"
             android:textColor="#8A8787"
             android:layout_height="wrap_content"/>
@@ -50,18 +52,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Device :  "
+            android:text="Reflectance (dB) :  "
             android:textSize="18sp"
             android:textColor="@color/colorMain"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="MTS 6000A V No. 0"
+            android:text="-"
             android:textSize="18sp"
             android:textColor="#8A8787"
             android:layout_height="wrap_content"/>
@@ -69,58 +73,88 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
         android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Module :  "
+            android:text="Slope (dB/km) :  "
             android:textSize="18sp"
             android:textColor="@color/colorMain"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="2142 No. 8136 B"
+            android:text="0,215"
             android:textSize="18sp"
             android:textColor="#8A8787"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Rel. Dist. (m) :  "
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="4224,77"
+            android:textSize="18sp"
+            android:textColor="#8A8787"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Section loss (dB) :  "
+            android:textSize="18sp"
+            android:textColor="@color/colorMain"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="0,835"
+            android:textSize="18sp"
+            android:textColor="#8A8787"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    android:layout_height="wrap_content">
 
     <TextView
         android:layout_width="wrap_content"
-        android:text="See All.."
+        android:text="Total loss (OTDR) (dB) :  "
         android:textSize="18sp"
-        android:layout_gravity="end"
-        android:id="@+id/seealltv"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:textAlignment="textEnd"
         android:textColor="@color/colorMain"
         android:layout_height="wrap_content"/>
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.anychart.AnyChartView
-            android:id="@+id/any_chart_view"
-            android:layout_marginTop="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            />
-
-        <ProgressBar
-            android:layout_width="wrap_content"
-            android:layout_centerInParent="true"
-            android:id="@+id/progrss"
-            android:layout_height="wrap_content"/>
-
-    </RelativeLayout>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:id="@+id/listData"
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="2,433"
+        android:textSize="18sp"
+        android:textColor="#8A8787"
         android:layout_height="wrap_content"/>
+</LinearLayout>
+
+
 
 </LinearLayout>

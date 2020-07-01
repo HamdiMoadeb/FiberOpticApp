@@ -2,8 +2,12 @@ package com.outsider.networkapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
@@ -24,6 +28,7 @@ import java.util.List;
 public class ChartsActivity extends AppCompatActivity {
 
     ListView listView;
+    TextView seeall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,23 @@ public class ChartsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Chart");
 
         listView = findViewById(R.id.listData);
+        seeall = findViewById(R.id.seealltv);
+
+        seeall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChartsActivity.this, InformationDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ChartsActivity.this, TableDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ArrayList<Routes> routes = new ArrayList<>();
         routes.add(new Routes("1", "- 521.5", "452.36"));

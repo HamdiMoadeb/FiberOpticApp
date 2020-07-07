@@ -15,18 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TableDetailsActivity" android:parentActivityName=".ChartsActivity"/>
+        <activity android:name=".TableDetailsActivity" />
         <activity
             android:name=".InformationDetailsActivity"
-            android:parentActivityName=".ChartsActivity" />
+           />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".ChartsActivity"
-            android:parentActivityName=".MapsActivity" />
+            android:name=".ChartsActivity" />
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"

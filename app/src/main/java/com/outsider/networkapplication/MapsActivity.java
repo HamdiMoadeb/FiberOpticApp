@@ -36,11 +36,14 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    String route = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        route = getIntent().getStringExtra("route");
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -51,57 +54,86 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MapsActivity.this, ChartsActivity.class);
+                intent.putExtra("route", route);
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng ll1 = new LatLng(36.821322, 10.1319776);
-        LatLng ll2 = new LatLng(36.8170795, 10.153823);
-        LatLng ll3 = new LatLng(36.8144279, 10.1713026);
-        LatLng ll4 = new LatLng(36.8026487, 10.1749374);
-        LatLng ll5 = new LatLng(36.7980938, 10.1893881);
+        if(route.equals("boussalem")){
+            LatLng mm = new LatLng(36.690865, 9.237541);
+
+            LatLng ll60 = new LatLng(36.610536,8.973817);
+            LatLng ll61 = new LatLng(36.623230,9.000490);
+            LatLng ll62 = new LatLng(36.622584,9.003355);
+            LatLng ll63 = new LatLng(36.624207,9.027588);
+            LatLng ll64 = new LatLng(36.627048,9.030345);
+            LatLng ll65 = new LatLng(36.629648,9.031611);
+            LatLng ll66 = new LatLng(36.627814,9.034229);
+            LatLng ll67 = new LatLng(36.718086,9.268370);
+            LatLng ll68 = new LatLng(36.696886,9.296306);
+            LatLng ll69 = new LatLng(36.703240,9.336911);
+            LatLng ll71 = new LatLng(36.682491,9.368543);
+            LatLng ll72 = new LatLng(36.706456,9.400132);
+            LatLng ll73 = new LatLng(36.661330,9.460802);
+            LatLng ll70 = new LatLng(36.668081,9.436680);
+
+            mMap.addMarker(new MarkerOptions().position(ll60).title("Room 1").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(ll66).title("Room 2").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(ll67).title("Room 3").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(ll71).title("Room 4").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(ll70).title("Room 5").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+
+            // Add polylines to the map.
+            // Polylines are useful to show a route or some other connection between points.
+            Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(ll60, ll61, ll62, ll63, ll64, ll65, ll66, ll67, ll68, ll69, ll71, ll72, ll73, ll70));
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mm, 10));
+
+        }else {
+            LatLng mm = new LatLng(36.690865, 9.237541);
+            LatLng gg = new LatLng(36.740269, 9.187097);
+
+            LatLng ll60 = new LatLng(36.733290,9.183801);
+            LatLng ll61 = new LatLng(36.734386,9.183678);
+            LatLng ll62 = new LatLng(36.735835,9.182641);
+            LatLng ll63 = new LatLng(36.738913,9.185774);
+            LatLng ll64 = new LatLng(36.738917,9.185527);
+            LatLng ll65 = new LatLng(36.741612,9.188488);
 
 
-        LatLng mm = new LatLng(36.690865, 9.237541);
+            mMap.addMarker(new MarkerOptions().position(ll60).title("Room 1").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(ll62).title("Room 2").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(ll63).title("Failure"));
+            mMap.addMarker(new MarkerOptions().position(gg).title("Room 4").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+            mMap.addMarker(new MarkerOptions().position(ll65).title("Room 5").icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        LatLng ll60 = new LatLng(36.610536,8.973817);
-        LatLng ll61 = new LatLng(36.623230,9.000490);
-        LatLng ll62 = new LatLng(36.622584,9.003355);
-        LatLng ll63 = new LatLng(36.624207,9.027588);
-        LatLng ll64 = new LatLng(36.627048,9.030345);
-        LatLng ll65 = new LatLng(36.629648,9.031611);
-        LatLng ll66 = new LatLng(36.627814,9.034229);
-        LatLng ll67 = new LatLng(36.718086,9.268370);
-        LatLng ll68 = new LatLng(36.696886,9.296306);
-        LatLng ll69 = new LatLng(36.703240,9.336911);
-        LatLng ll71 = new LatLng(36.682491,9.368543);
-        LatLng ll72 = new LatLng(36.706456,9.400132);
-        LatLng ll73 = new LatLng(36.661330,9.460802);
-        LatLng ll70 = new LatLng(36.668081,9.436680);
+            // Add polylines to the map.
+            // Polylines are useful to show a route or some other connection between points.
+            Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
+                    .clickable(true)
+                    .add(ll60, ll61, ll62, ll63, ll64, ll65));
 
-        mMap.addMarker(new MarkerOptions().position(ll60).title("Marker 1").icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        mMap.addMarker(new MarkerOptions().position(ll70).title("Marker 2").icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        /*mMap.addMarker(new MarkerOptions().position(ll3).title("Marker 3"));
-        mMap.addMarker(new MarkerOptions().position(ll4).title("Marker 4").icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        mMap.addMarker(new MarkerOptions().position(ll5).title("Marker 5").icon(BitmapDescriptorFactory
-                .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));*/
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ll63, 15));
+        }
 
-        // Add polylines to the map.
-        // Polylines are useful to show a route or some other connection between points.
-        Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
-                .clickable(true)
-                .add(ll60, ll61, ll62, ll63, ll64, ll65, ll66, ll67, ll68, ll69, ll71, ll72, ll73, ll70));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mm, 10));
 
 
         //draw route :'( (billing account)

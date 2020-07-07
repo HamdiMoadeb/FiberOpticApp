@@ -19,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
     Spinner spinAdvice, spinRoutes;
     String[] devices = { "MTS 6000A NO.0", "MTS 6000B NO.1"};
-    String[] routes1 = { "Beja-Bousalem1", "Bousalem2-Beja", "Beja-Garde-Nationale ", "Ouad Zarga-Bousalem2", "Ouad Zarga-Beja"};
+    String[] routes1 = { "Beja-Bousalem1", "Bousalem2-Beja", "Beja-Garde Nationale ", "Ouad Zarga-Bousalem2", "Ouad Zarga-Beja"};
     String[] routes2 = { "Tunis-Garde Nationale", "Garde Nationale-Sousse"};
     Button btnmap;
+    int routeselected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +60,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        spinRoutes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                routeselected = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         btnmap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
-                startActivity(intent);
+                if(routeselected == 2){
+                    Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                    intent.putExtra("route", "beja");
+                    startActivity(intent);
+                }else if(routeselected == 3){
+                    Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                    intent.putExtra("route", "boussalem");
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(MainActivity.this, "No Data provided!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

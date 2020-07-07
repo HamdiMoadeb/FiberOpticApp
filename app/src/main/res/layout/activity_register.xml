@@ -23,6 +23,7 @@
         <EditText
             android:layout_width="match_parent"
             android:hint="Username"
+            android:id="@+id/usernameRegister"
             android:drawableLeft="@drawable/ic_baseline_account"
             android:paddingStart="10dp"
             android:textAlignment="center"
@@ -34,6 +35,8 @@
         <EditText
             android:layout_width="match_parent"
             android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:id="@+id/emailRegister"
             android:drawableLeft="@drawable/ic_baseline_email"
             android:paddingStart="10dp"
             android:textAlignment="center"
@@ -45,6 +48,7 @@
         <EditText
             android:layout_width="match_parent"
             android:hint="Password"
+            android:id="@+id/passRegister"
             android:drawableLeft="@drawable/ic_baseline_lock"
             android:paddingStart="10dp"
             android:inputType="textPassword"
@@ -56,6 +60,7 @@
         <EditText
             android:layout_width="match_parent"
             android:hint="Confirm Password"
+            android:id="@+id/confirmPassRegister"
             android:drawableLeft="@drawable/ic_baseline_lock"
             android:paddingStart="10dp"
             android:inputType="textPassword"
@@ -106,10 +111,6 @@
 
 
         </LinearLayout>
-
-
-
     </LinearLayout>
-
 
 </ScrollView>

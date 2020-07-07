@@ -28,22 +28,29 @@ import java.util.List;
 public class ChartsActivity extends AppCompatActivity {
 
     ListView listView;
-    TextView seeall;
+    TextView seeall, file, device, module, date;
+    String route = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charts);
+        route = getIntent().getStringExtra("route");
 
         getSupportActionBar().setTitle("Chart");
 
         listView = findViewById(R.id.listData);
         seeall = findViewById(R.id.seealltv);
+        file = findViewById(R.id.filetv);
+        device = findViewById(R.id.devicetv);
+        module = findViewById(R.id.moduletv);
+        date = findViewById(R.id.datetv);
 
         seeall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ChartsActivity.this, InformationDetailsActivity.class);
+                intent.putExtra("route", route);
                 startActivity(intent);
             }
         });
@@ -57,13 +64,46 @@ public class ChartsActivity extends AppCompatActivity {
         });
 
         ArrayList<Routes> routes = new ArrayList<>();
-        routes.add(new Routes("1", "- 521.5", "452.36"));
-        routes.add(new Routes("2", "- 320.5", "54412.36"));
-        routes.add(new Routes("3", "- 201.5", "214.36"));
-        routes.add(new Routes("4", "- 874.5", "4110.36"));
-        routes.add(new Routes("5", "- 521.5", "54412.36"));
-        routes.add(new Routes("6", "- 11.5", "1230.36"));
-        routes.add(new Routes("7", "- 230.5", "1002.36"));
+        List<DataEntry> seriesData = new ArrayList<>();
+        if(route.equals("boussalem")){
+
+            file.setText("Fiber Oued zarga vers boussalem2");
+            date.setText("08/10/2019 12:33:10");
+            device.setText("MTS 6000A V No. 0");
+            module.setText("2142 No. 8136 B");
+
+            seriesData.add(new CustomDataEntry("1", 0, 0, 14));
+            seriesData.add(new CustomDataEntry("10", 0, 0, -5));
+            seriesData.add(new CustomDataEntry("20", 0, 0, -8));
+            seriesData.add(new CustomDataEntry("30", 0, 0, -10));
+            seriesData.add(new CustomDataEntry("40", 0, 0, -12));
+            seriesData.add(new CustomDataEntry("50", 0, 0, -14));
+
+            routes.add(new Routes("1", "- 521.5", "452.36"));
+            routes.add(new Routes("2", "- 320.5", "54412.36"));
+            routes.add(new Routes("3", "- 201.5", "214.36"));
+            routes.add(new Routes("4", "- 874.5", "4110.36"));
+            routes.add(new Routes("5", "- 521.5", "54412.36"));
+            routes.add(new Routes("6", "- 11.5", "1230.36"));
+            routes.add(new Routes("8", "- 22.5", "1220.36"));
+            routes.add(new Routes("9", "- 471.5", "1002.36"));
+            routes.add(new Routes("10", "- 520.5", "1002.36"));
+            routes.add(new Routes("11", "- 230.5", "54412.36"));
+            routes.add(new Routes("12", "- 38.5", "1002.36"));
+        }else {
+            file.setText("Fiber beja vers garde nationale");
+            date.setText("08/10/2019 13:21:40");
+            device.setText("MTS 6000A V No. 0");
+            module.setText("2142 No. 8136 B");
+
+            seriesData.add(new CustomDataEntry("1", 0, 0, 10));
+            seriesData.add(new CustomDataEntry("2", 0, 0, -1));
+            seriesData.add(new CustomDataEntry("3", 0, 0, 0));
+            seriesData.add(new CustomDataEntry("4", 0, 0, 0));
+            seriesData.add(new CustomDataEntry("5", 0, 0, 0));
+
+            routes.add(new Routes("1", "- 44.55", "985.35"));
+        }
 
         AdapterListData adapterListData = new AdapterListData(this, R.layout.item_data, routes);
         listView.setAdapter(adapterListData);
@@ -85,43 +125,9 @@ public class ChartsActivity extends AppCompatActivity {
         cartesian.yAxis(0).title("dB");
         cartesian.xAxis(0).labels().padding(5d, 5d, 5d, 5d);
 
-        List<DataEntry> seriesData = new ArrayList<>();
-        seriesData.add(new CustomDataEntry("1", 0, 0, 14));
-        seriesData.add(new CustomDataEntry("10", 0, 0, -5));
-        seriesData.add(new CustomDataEntry("20", 0, 0, -8));
-        seriesData.add(new CustomDataEntry("30", 0, 0, -10));
-        seriesData.add(new CustomDataEntry("40", 0, 0, -12));
-        seriesData.add(new CustomDataEntry("50", 0, 0, -14));
-
         Set set = Set.instantiate();
         set.data(seriesData);
-        Mapping series1Mapping = set.mapAs("{ x: 'x', value: 'value' }");
-        Mapping series2Mapping = set.mapAs("{ x: 'x', value: 'value2' }");
         Mapping series3Mapping = set.mapAs("{ x: 'x', value: 'value3' }");
-
-//        Line series1 = cartesian.line(series1Mapping);
-//        series1.name("Brandy");
-//        series1.hovered().markers().enabled(true);
-//        series1.hovered().markers()
-//                .type(MarkerType.CIRCLE)
-//                .size(4d);
-//        series1.tooltip()
-//                .position("right")
-//                .anchor(Anchor.LEFT_CENTER)
-//                .offsetX(5d)
-//                .offsetY(5d);
-
-//        Line series2 = cartesian.line(series2Mapping);
-//        series2.name("Whiskey");
-//        series2.hovered().markers().enabled(true);
-//        series2.hovered().markers()
-//                .type(MarkerType.CIRCLE)
-//                .size(4d);
-//        series2.tooltip()
-//                .position("right")
-//                .anchor(Anchor.LEFT_CENTER)
-//                .offsetX(5d)
-//                .offsetY(5d);
 
         Line series3 = cartesian.line(series3Mapping);
         series3.name("Loss");

@@ -25,6 +25,7 @@
             android:layout_width="wrap_content"
             android:text="Fiber oued zarga vers bouselem2"
             android:textSize="18sp"
+            android:id="@+id/filetv"
             android:textColor="#8A8787"
             android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -42,9 +43,10 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="08/10/2019 12:33:10"
+            android:text=""
             android:textSize="18sp"
             android:textColor="#8A8787"
+            android:id="@+id/datetv"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
@@ -61,9 +63,10 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="MTS 6000A V No. 0"
+            android:text=""
             android:textSize="18sp"
             android:textColor="#8A8787"
+            android:id="@+id/devicetv"
             android:layout_height="wrap_content"/>
     </LinearLayout>
     <LinearLayout
@@ -80,9 +83,10 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="2142 No. 8136 B"
+            android:text=""
             android:textSize="18sp"
             android:textColor="#8A8787"
+            android:id="@+id/moduletv"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 

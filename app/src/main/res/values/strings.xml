@@ -6,4 +6,12 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_maps2">Map</string>
     <string name="a_b"><![CDATA[A<--B]]></string>
+    <string name="date">08/10/2019 12:33:10</string>
+    <string name="device1">MTS 6000A V No. 0</string>
+    <string name="module1">2142 No. 8136 B</string>
+    <string name="fibera">Fiber Oued zarga vers boussalem2</string>
+    <string name="fiberb">Fiber beja vers garde nationale</string>
+    <string name="dateb">08/10/2019 13:21:40</string>
+    <string name="deviceb">MTS 6000A V No. 0</string>
+    <string name="moduleb">2142 No. 8136 B</string>
 </resources>

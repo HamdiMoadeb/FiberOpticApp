@@ -2,12 +2,16 @@ package com.outsider.networkapplication;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +24,10 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 
 import org.json.JSONObject;
 
@@ -37,6 +45,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     String route = "";
+    ProgressDialog progressDialog;
+    ArrayList<LatLng> latlngsBoussalem;
+    ArrayList<LatLng> latlngsBeja;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,81 +70,107 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Loading");
+        progressDialog.setMessage("Please wait...");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setCancelable(false);
+
+        latlngsBeja = new ArrayList<>();
+        latlngsBoussalem = new ArrayList<>();
+
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(final GoogleMap googleMap) {
         mMap = googleMap;
 
-        if(route.equals("boussalem")){
-            LatLng mm = new LatLng(36.690865, 9.237541);
+        Ion.with(MapsActivity.this)
+                .load("https://fibre-backend.herokuapp.com/MapsActivity")
+                .asJsonObject()
+                .setCallback(new FutureCallback<JsonObject>() {
+                    @Override
+                    public void onCompleted(Exception e, JsonObject result) {
+                        progressDialog.dismiss();
+                        if(e == null){
+                            if(route.equals("boussalem")){
+                                JsonArray jsonBoussalem = result.get("LatLngBoussalem").getAsJsonArray();
+                                for (int i = 0; i < jsonBoussalem.size(); i++){
+                                    JsonObject jsonLatlng = jsonBoussalem.get(i).getAsJsonObject();
+                                    latlngsBoussalem.add(new LatLng(jsonLatlng.get("lat").getAsDouble(), jsonLatlng.get("lng").getAsDouble()));
+                                }
+                                LatLng mm = new LatLng(36.690865, 9.237541);
 
-            LatLng ll60 = new LatLng(36.610536,8.973817);
-            LatLng ll61 = new LatLng(36.623230,9.000490);
-            LatLng ll62 = new LatLng(36.622584,9.003355);
-            LatLng ll63 = new LatLng(36.624207,9.027588);
-            LatLng ll64 = new LatLng(36.627048,9.030345);
-            LatLng ll65 = new LatLng(36.629648,9.031611);
-            LatLng ll66 = new LatLng(36.627814,9.034229);
-            LatLng ll67 = new LatLng(36.718086,9.268370);
-            LatLng ll68 = new LatLng(36.696886,9.296306);
-            LatLng ll69 = new LatLng(36.703240,9.336911);
-            LatLng ll71 = new LatLng(36.682491,9.368543);
-            LatLng ll72 = new LatLng(36.706456,9.400132);
-            LatLng ll73 = new LatLng(36.661330,9.460802);
-            LatLng ll70 = new LatLng(36.668081,9.436680);
+                                mMap.addMarker(new MarkerOptions().position(latlngsBoussalem.get(0)).title("Room 1").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.addMarker(new MarkerOptions().position(latlngsBoussalem.get(6)).title("Room 2").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.addMarker(new MarkerOptions().position(latlngsBoussalem.get(7)).title("Room 3").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.addMarker(new MarkerOptions().position(latlngsBoussalem.get(10)).title("Room 4").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.addMarker(new MarkerOptions().position(latlngsBoussalem.get(13)).title("Room 5").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-            mMap.addMarker(new MarkerOptions().position(ll60).title("Room 1").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(ll66).title("Room 2").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(ll67).title("Room 3").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(ll71).title("Room 4").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(ll70).title("Room 5").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                // Add polylines to the map.
+                                // Polylines are useful to show a route or some other connection between points.
+                                Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
+                                        .clickable(true)
+                                        .add(latlngsBoussalem.get(0),
+                                                latlngsBoussalem.get(1),
+                                                latlngsBoussalem.get(2),
+                                                latlngsBoussalem.get(3),
+                                                latlngsBoussalem.get(4),
+                                                latlngsBoussalem.get(5),
+                                                latlngsBoussalem.get(6),
+                                                latlngsBoussalem.get(7),
+                                                latlngsBoussalem.get(8),
+                                                latlngsBoussalem.get(9),
+                                                latlngsBoussalem.get(10),
+                                                latlngsBoussalem.get(11),
+                                                latlngsBoussalem.get(12),
+                                                latlngsBoussalem.get(13)));
 
-            // Add polylines to the map.
-            // Polylines are useful to show a route or some other connection between points.
-            Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
-                    .clickable(true)
-                    .add(ll60, ll61, ll62, ll63, ll64, ll65, ll66, ll67, ll68, ll69, ll71, ll72, ll73, ll70));
+                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mm, 10));
 
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mm, 10));
+                            }else{
 
-        }else {
-            LatLng mm = new LatLng(36.690865, 9.237541);
-            LatLng gg = new LatLng(36.740269, 9.187097);
+                                JsonArray jsonBeja = result.get("LatLngBeja").getAsJsonArray();
+                                for (int i = 0; i < jsonBeja.size(); i++){
+                                    JsonObject jsonLatlng = jsonBeja.get(i).getAsJsonObject();
+                                    latlngsBeja.add(new LatLng(jsonLatlng.get("lat").getAsDouble(), jsonLatlng.get("lng").getAsDouble()));
+                                }
+                                LatLng gg = new LatLng(36.740269, 9.187097);
 
-            LatLng ll60 = new LatLng(36.733290,9.183801);
-            LatLng ll61 = new LatLng(36.734386,9.183678);
-            LatLng ll62 = new LatLng(36.735835,9.182641);
-            LatLng ll63 = new LatLng(36.738913,9.185774);
-            LatLng ll64 = new LatLng(36.738917,9.185527);
-            LatLng ll65 = new LatLng(36.741612,9.188488);
+                                mMap.addMarker(new MarkerOptions().position(latlngsBeja.get(0)).title("Room 1").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.addMarker(new MarkerOptions().position(latlngsBeja.get(2)).title("Room 2").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.addMarker(new MarkerOptions().position(latlngsBeja.get(3)).title("Failure"));
+                                mMap.addMarker(new MarkerOptions().position(gg).title("Room 4").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.addMarker(new MarkerOptions().position(latlngsBeja.get(5)).title("Room 5").icon(BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
+                                // Add polylines to the map.
+                                // Polylines are useful to show a route or some other connection between points.
+                                Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
+                                        .clickable(true)
+                                        .add(latlngsBeja.get(0),
+                                                latlngsBeja.get(1),
+                                                latlngsBeja.get(2),
+                                                latlngsBeja.get(3),
+                                                latlngsBeja.get(4),
+                                                latlngsBeja.get(5)));
 
-            mMap.addMarker(new MarkerOptions().position(ll60).title("Room 1").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(ll62).title("Room 2").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(ll63).title("Failure"));
-            mMap.addMarker(new MarkerOptions().position(gg).title("Room 4").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-            mMap.addMarker(new MarkerOptions().position(ll65).title("Room 5").icon(BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latlngsBeja.get(3), 15));
+                            }
+                        }else{
+                            Toast.makeText(MapsActivity.this, "Sorry something went wrong !", Toast.LENGTH_SHORT).show();
+                        }
 
-            // Add polylines to the map.
-            // Polylines are useful to show a route or some other connection between points.
-            Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
-                    .clickable(true)
-                    .add(ll60, ll61, ll62, ll63, ll64, ll65));
-
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ll63, 15));
-        }
-
-
+                    }
+                });
 
 
         //draw route :'( (billing account)

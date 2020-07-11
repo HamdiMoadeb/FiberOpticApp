@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "973620191505",
+    "firebase_url": "https://fiberoptic-fe553.firebaseio.com",
+    "project_id": "fiberoptic-fe553",
+    "storage_bucket": "fiberoptic-fe553.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973620191505:android:5dd548c5e39c118807ecb0",
+        "android_client_info": {
+          "package_name": "com.outsider.networkapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973620191505-vljf11nb5trv9je8dl6631jt47mo9c4l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.outsider.networkapplication",
+            "certificate_hash": "41a4f877c00c6e073e723667663bcb34a5e3d375"
+          }
+        },
+        {
+          "client_id": "973620191505-i415uptlucjg73u5allkr6git6hhhu7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEV4w8D1NxJFyu7qMjZm2NwiNOJBZ8Iec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973620191505-i415uptlucjg73u5allkr6git6hhhu7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
